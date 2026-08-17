@@ -79,35 +79,24 @@ cd api_cadastro_consulta_cep
 
 ## 🔌 Como Funciona a Integração com a API
 
-A aplicação consome a rota pública da API do **ViaCEP**:
+A aplicação consome a rota pública da API do **BrasilAPI**:
 
 ```http
-GET [https://viacep.com.br/ws/](https://viacep.com.br/ws/){cep}/json/
+GET [https://brasilapi.com.br/api/cep/v1/](https://brasilapi.com.br/api/cep/v1/){cep}
 
 ```
 
-### Exemplo de Fluxo no Código
-
-```javascript
-// Sanitiza a entrada removendo caracteres não numéricos
-const cepLimpo = inputCEP.value.replace(/\D/g, '');
-
-// Requisição assíncrona utilizando Fetch API
-const resposta = await fetch(`[https://viacep.com.br/ws/$](https://viacep.com.br/ws/$){cepLimpo}/json/`);
-const dados = await resposta.json();
-
-// Tratamento de erro retornado pela API (CEP inexistente)
-if (dados.erro) {
-  throw new Error('CEP não encontrado.');
+## Exemplo de Retorno (JSON) da BrasilAPI:
+```
+{
+  "cep": "89460000",
+  "state": "SC",
+  "city": "Canoinhas",
+  "neighborhood": "Centro",
+  "street": "Rua Major Vieira",
+  "service": "correios"
 }
-
-// Autopreenchimento dos campos do formulário
-inputRua.value = dados.logradouro || '';
-inputBairro.value = dados.bairro || '';
-inputCidade.value = `${dados.localidade}/${dados.uf}`;
-
 ```
-
 ---
 
 ## 👤 Autor
