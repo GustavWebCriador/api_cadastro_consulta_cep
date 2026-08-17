@@ -11,6 +11,17 @@ Este projeto foi desenvolvido como um estudo prático focado em **integração d
 
 ---
 
+## 🌐 Acesse a Aplicação
+
+A aplicação está implantada e disponível para testes em tempo real na plataforma Vercel:
+
+👉 **[Acessar Projeto na Vercel](https://api-cadastro-consulta-cep.vercel.app/)**
+
+Você pode verificar a API funcionando e fazendo a validação e encontrando o CEP 
+digitado. 
+
+---
+
 ## 📌 Funcionalidades
 
 - ⚡ **Máscara Dinâmica em Tempo Real:** Formatação automática do CEP no padrão `00000-000` enquanto o usuário digita.
